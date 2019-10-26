@@ -1,0 +1,3 @@
+module miniProjeto {
+	exports miniProjeto;
+}

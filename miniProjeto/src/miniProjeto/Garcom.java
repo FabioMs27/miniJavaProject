@@ -14,9 +14,11 @@ public class Garcom extends Funcionario{
 	
 	//Métodos
 	@Override
-	public void acessarRestaurante() {
+	public void acessarRestaurante(String valor) {
 		// TODO Auto-generated method stub
-		super.acessarRestaurante();
+		super.acessarRestaurante(valor);
+		
+		this.qtdVendas++;
 	}
 
 	public String toString() {

@@ -13,7 +13,10 @@ public class Funcionario {
 	}
 	
 	//Metodos
-	public void acessarRestaurante() {}
+	public void acessarRestaurante(String valor) {
+		if(!valor.equals(this.getId()))
+			throw new IllegalArgumentException("Id invalido!");
+	}
 	
 	public String getId() {
 		return id;

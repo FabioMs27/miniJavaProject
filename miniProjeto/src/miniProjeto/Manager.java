@@ -12,8 +12,10 @@ public class Manager extends Funcionario{
 
 	//Métodos
 	@Override
-	public void acessarRestaurante() {
+	public void acessarRestaurante(String valor) {
 		// TODO Auto-generated method stub
-		super.acessarRestaurante();
+		super.acessarRestaurante(valor);
+
+		//Exibir msg
 	}
 }
