@@ -8,11 +8,12 @@ public class Executora {
 		// TODO Auto-generated method stub
 		int opcao;
 		Cardapio cardapio = new Cardapio();
-		Garcom garcom1 = new Garcom("Brother", "001");
-		Garcom garcom2 = new Garcom("Emílio", "002");
-		Garcom garcom3 = new Garcom("Joana", "003");
-		Cozinheiro cozinheiro = new Cozinheiro("Felícia", "004");
-		Manager manager = new Manager("Drixx", "005");
+		Garcom garcom1 = new Garcom("Brother", "1");
+		Garcom garcom2 = new Garcom("Emílio", "2");
+		Garcom garcom3 = new Garcom("Joana", "3");
+		Garcom garcom;
+		Cozinheiro cozinheiro = new Cozinheiro("Felícia", "4");
+		Manager manager = new Manager("Drixx", "5");
 		ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 		funcionarios.add(manager);
 		funcionarios.add(garcom1);
@@ -32,7 +33,11 @@ public class Executora {
 				break;
 			case 2:
 				//Fazer o processo de venda
-				Utils.criarVendas(garcom1, cardapio);
+				garcom = Utils.escolherGarcom(funcionarios);
+				if(garcom.getId() == "1" || garcom.getId() == "2" || garcom.getId() == "3")
+					Utils.criarVendas(garcom, cardapio);
+				else
+					View.getError("Error", "Garcom inválido");
 				break;
 			case 3:
 				//Gerar o relátorio
@@ -40,7 +45,7 @@ public class Executora {
 				break;
 			case 4:
 				//Sortear o funcionário do mês
-				funcionarios.get(Utils.getRandomDoubleBetweenRange(0, 4)).toString();
+				View.getAfirmative("Funcionário do mês", funcionarios.get(Utils.getRandomDoubleBetweenRange(0, 4)).toString());
 				break;
 			case 5:
 				opcao = 0;

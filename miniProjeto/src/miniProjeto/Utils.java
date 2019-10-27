@@ -1,5 +1,7 @@
 package miniProjeto;
 
+import java.util.ArrayList;
+
 public class Utils {
 	public static Comida criarComida(Cozinheiro cozinheiro) {
 		String nome = "";
@@ -26,10 +28,9 @@ public class Utils {
 		Vendas newValue = null;
 		
 		try {
-			brother.acessarRestaurante(View.getString("Id do Funcionário", "Digite o Id do cozinheiro: "));
 			newValue = new Vendas(
-					cardapio.getComida(View.getInteger("Cardápio", cardapio.getComidas())),
-					brother);
+                    cardapio.getComida(View.getInteger("Cardápio", cardapio.getComidas() + "\n Escolha a comida: ") - 1),
+                    brother);
 		} catch (IllegalArgumentException e) {
 			// TODO: handle exception
 			View.getError("Input invalido", e.getMessage());
@@ -52,5 +53,10 @@ public class Utils {
         int i = (int) x;
         return i;
     }
+	
+	public static Garcom escolherGarcom(ArrayList<Funcionario> funcionarios) {
+		Garcom garcom = (Garcom) funcionarios.get(View.getInteger("ID do funcionario", "Digite o id do funcionario"));
+		return garcom;
+	}
 	
 }

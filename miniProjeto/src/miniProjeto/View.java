@@ -8,7 +8,7 @@ public class View {
 	}
 	
 	public static void getAfirmative(String msg, String title) {
-		JOptionPane.showInputDialog(null, msg, title, JOptionPane.DEFAULT_OPTION);
+		JOptionPane.showInputDialog(null, title, msg, JOptionPane.DEFAULT_OPTION);
 	}
 	
 	public static void getError(String msg, String title) {

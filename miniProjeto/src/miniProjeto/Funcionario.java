@@ -35,7 +35,7 @@ public class Funcionario {
 	}
 	
 	public String toString() {
-		return "nome: " + this.nome;
+		return "Nome: " + this.nome;
 	}
 	
 }
