@@ -37,10 +37,20 @@ public class Utils {
 		return newValue;
 	}
 	
-
-	public static int getRandomDoubleBetweenRange(double min, double max){
-	    double x = (Math.random()*((max-min)+1))+min;
-	    int i = (int) x;
-	    return i;
+	public void getManagerId(Manager manager) {
+		try {
+			String id = View.getString("Id Manager", "Digite o id do manager: ");
+			manager.acessarRestaurante(id);
+		} catch (IllegalArgumentException e) {
+			// TODO: handle exception
+			View.getAfirmative("Error", e.getMessage());
+		}
 	}
+	
+	public static int getRandomDoubleBetweenRange(double min, double max){
+        double x = (Math.random()*((max-min)+1))+min;
+        int i = (int) x;
+        return i;
+    }
+	
 }

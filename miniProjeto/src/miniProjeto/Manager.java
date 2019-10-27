@@ -17,5 +17,6 @@ public class Manager extends Funcionario{
 		super.acessarRestaurante(valor);
 
 		//Exibir msg
+		View.getAfirmative("Relatório", "Total de vendas: " + Vendas.vendaTotal + "\n Lucro total R$:" + Vendas.lucroTotal);
 	}
 }
