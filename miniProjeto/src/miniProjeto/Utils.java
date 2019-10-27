@@ -1,32 +1,39 @@
 package miniProjeto;
 
 public class Utils {
-	public static Comida criarComida() {
+	public static Comida criarComida(Cozinheiro cozinheiro) {
 		String nome = "";
 		float preco = 0;
 		String tipo = "";
+		
+		
 		try {
+			cozinheiro.acessarRestaurante(View.getString("Id do Funcionário", "Digite o Id do cozinheiro: "));
 			nome = View.getString("Nome da Comida", "Digite o nome da comida");
-		} catch (IllegalArgumentException e) {
-			View.getError("Nome Inválido", "Nome colocado inválido");
-		}catch (Exception e) {
-			View.getError("Nome Inválido", "Nome colocado inválido");
-		}
-		try {
 			preco = View.getFloat("Preço da Comida", "Digite o preço da comida");
-		} catch (IllegalArgumentException e) {
-			View.getError("Preço inválido", "Preço colocado inválido");
-		}catch (Exception e) {
-			View.getError("Preço inválido", "Preço colocado inválido");
-		}
-		try {
 			tipo = View.getString("Nome do Tipo", "Digite o tipo de comida");
 		} catch (IllegalArgumentException e) {
-			View.getError("Tipo Inválido", "Tipo colocado inválido");
+			View.getError("Input invalido", e.getMessage());
 		}catch (Exception e) {
-			View.getError("Tipo Inválido", "Tipo colocado inválido");
+			View.getError("Input invalido", e.getMessage());
 		}
+		
 		Comida comida = new Comida(nome, preco, tipo);
 		return comida;
+	}
+	
+	public static Vendas criarVendas(Garcom brother, Cardapio cardapio) {
+		Vendas newValue = null;
+		
+		try {
+			brother.acessarRestaurante(View.getString("Id do Funcionário", "Digite o Id do cozinheiro: "));
+			newValue = new Vendas(
+					cardapio.getComida(View.getInteger("Cardápio", cardapio.getComidas())),
+					brother);
+		} catch (IllegalArgumentException e) {
+			// TODO: handle exception
+			View.getError("Input invalido", e.getMessage());
+		}
+		return newValue;
 	}
 }
