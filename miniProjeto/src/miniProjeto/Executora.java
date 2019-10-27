@@ -36,6 +36,7 @@ public class Executora {
 				break;
 			case 3:
 				//Gerar o relátorio
+				Utils.getManagerId(manager);
 				break;
 			case 4:
 				//Sortear o funcionário do mês

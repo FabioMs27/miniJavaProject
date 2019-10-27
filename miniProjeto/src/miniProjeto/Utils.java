@@ -37,13 +37,13 @@ public class Utils {
 		return newValue;
 	}
 	
-	public void getManagerId(Manager manager) {
+	public static void getManagerId(Manager manager) {
 		try {
 			String id = View.getString("Id Manager", "Digite o id do manager: ");
 			manager.acessarRestaurante(id);
 		} catch (IllegalArgumentException e) {
 			// TODO: handle exception
-			View.getAfirmative("Error", e.getMessage());
+			View.getError("Error", e.getMessage());
 		}
 	}
 	
