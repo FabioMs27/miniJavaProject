@@ -5,6 +5,7 @@ public class Executora {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int opcao;
+		Cardapio cadarpio = new Cardapio();
 		do {
 			opcao =  View.getInteger("Menu", "1 - Cadastrar Comida\n"
 					+ "2 - Vender\n"
@@ -14,6 +15,7 @@ public class Executora {
 			switch (opcao) {
 			case 1:
 				//Chamar o processo de cadastrar a comida da Ultis
+				cadarpio.addComida(Utils.criarComida());
 				break;
 			case 2:
 				//Fazer o processo de venda

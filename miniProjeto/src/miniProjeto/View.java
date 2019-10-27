@@ -22,4 +22,8 @@ public class View {
 	public static double getDouble(String msg, String title) {
 		return Double.parseDouble(View.getString(title, msg));
 	}
+	
+	public static float getFloat(String msg, String title) {
+		return Float.parseFloat(View.getString(title, msg));
+	}
 }
