@@ -1,5 +1,7 @@
 package miniProjeto;
 
+import java.util.ArrayList;
+
 public class Executora {
 
 	public static void main(String[] args) {
@@ -11,6 +13,12 @@ public class Executora {
 		Garcom garcom3 = new Garcom("Joana", "003");
 		Cozinheiro cozinheiro = new Cozinheiro("Felícia", "004");
 		Manager manager = new Manager("Drixx", "005");
+		ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
+		funcionarios.add(manager);
+		funcionarios.add(garcom1);
+		funcionarios.add(garcom2);
+		funcionarios.add(garcom3);
+		funcionarios.add(cozinheiro);
 		do {
 			opcao =  View.getInteger("Menu", "1 - Cadastrar Comida\n"
 					+ "2 - Vender\n"
@@ -31,6 +39,7 @@ public class Executora {
 				break;
 			case 4:
 				//Sortear o funcionário do mês
+				funcionarios.get(Utils.getRandomDoubleBetweenRange(0, 4)).toString();
 				break;
 			case 5:
 				opcao = 0;

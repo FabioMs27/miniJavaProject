@@ -36,4 +36,11 @@ public class Utils {
 		}
 		return newValue;
 	}
+	
+
+	public static int getRandomDoubleBetweenRange(double min, double max){
+	    double x = (Math.random()*((max-min)+1))+min;
+	    int i = (int) x;
+	    return i;
+	}
 }
