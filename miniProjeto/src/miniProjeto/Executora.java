@@ -6,6 +6,11 @@ public class Executora {
 		// TODO Auto-generated method stub
 		int opcao;
 		Cardapio cadarpio = new Cardapio();
+		Garcom garcom1 = new Garcom("Brother", "001");
+		Garcom garcom2 = new Garcom("Emílio", "002");
+		Garcom garcom3 = new Garcom("Joana", "003");
+		Cozinheiro cozinheiro = new Cozinheiro("Felícia", "004");
+		Manager manager = new Manager("Drixx", "005");
 		do {
 			opcao =  View.getInteger("Menu", "1 - Cadastrar Comida\n"
 					+ "2 - Vender\n"
